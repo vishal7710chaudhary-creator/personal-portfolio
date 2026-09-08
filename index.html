@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VishalChaudhary | Frontend Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0f19;
+            color: white;
+            transition: 0.4s;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00e5ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        #themeBtn {
+            background: #00e5ff;
+            border: none;
+            padding: 9px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 120px 10% 60px;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h3 {
+            color: #00e5ff;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            line-height: 1.1;
+        }
+
+        .hero-text h1 span {
+            color: #00e5ff;
+        }
+
+        .hero-text p {
+            margin: 25px 0;
+            color: #b8c0d0;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00e5ff;
+            color: #061018;
+        }
+
+        .secondary {
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,229,255,0.25);
+        }
+
+        /* PROFILE IMAGE */
+
+        .profile-box {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, #00e5ff, #7c3cff);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #0b0f19;
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #00e5ff;
+        }
+
+        /* ABOUT */
+
+        .about {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .about p {
+            color: #b8c0d0;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: #121827;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+            border-color: #00e5ff;
+        }
+
+        .skill h3 {
+            margin-top: 15px;
+        }
+
+        .skill-icon {
+            font-size: 45px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: #121827;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            border-color: #00e5ff;
+        }
+
+        .project h3 {
+            color: #00e5ff;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #b8c0d0;
+            line-height: 1.6;
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #121827;
+            border: 1px solid #273149;
+            border-radius: 8px;
+            color: white;
+            outline: none;
+        }
+
+        .contact textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #00e5ff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #070a11;
+            color: #9ca3af;
+        }
+
+        /* SCROLL BUTTON */
+
+        #topBtn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: #00e5ff;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+        }
+
+
+        /* ===== CALCULATOR MODAL ===== */
+        .calculator-modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0,0,20,.78);
+            backdrop-filter: blur(12px);
+            z-index: 3000;
+        }
+
+        .calculator-modal.show {
+            display: flex;
+            animation: calcFade .25s ease both;
+        }
+
+        .calculator {
+            position: relative;
+            width: min(390px, 100%);
+            padding: 24px;
+            border-radius: 24px;
+            background: rgba(18,24,39,.96);
+            border: 1px solid rgba(0,229,255,.35);
+            box-shadow: 0 0 60px rgba(0,229,255,.18), 0 25px 80px rgba(0,0,0,.45);
+            animation: calcPop .35s cubic-bezier(.2,.8,.2,1) both;
+        }
+
+        .calc-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .calc-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #00e5ff;
+        }
+
+        .calc-display {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            background: #070a11;
+            border: 1px solid rgba(255,255,255,.08);
+            color: white;
+            font-size: 34px;
+            font-weight: bold;
+            overflow: hidden;
+            word-break: break-all;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .calc-grid button {
+            min-height: 60px;
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 15px;
+            background: #121827;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+        }
+
+        .calc-grid button:hover {
+            transform: translateY(-3px);
+            border-color: #00e5ff;
+            box-shadow: 0 8px 20px rgba(0,229,255,.12);
+        }
+
+        .calc-grid .calc-action {
+            color: #00e5ff;
+        }
+
+        .calc-grid .calc-op {
+            background: rgba(0,229,255,.12);
+            color: #00e5ff;
+        }
+
+        .calc-grid .calc-equal {
+            background: linear-gradient(135deg, #00e5ff, #7c3cff);
+            color: #061018;
+        }
+
+        .calc-grid .zero {
+            grid-column: span 2;
+        }
+
+        @keyframes calcFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes calcPop {
+            from { opacity: 0; transform: scale(.88) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:500px) {
+
+            .profile-box {
+                width: 280px;
+                height: 280px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+        }
+
+        /* LIGHT MODE */
+
+        body.light {
+            background: #f5f7fb;
+            color: #111827;
+        }
+
+        body.light nav {
+            background: rgba(255,255,255,0.9);
+        }
+
+        body.light nav a {
+            color: #111827;
+        }
+
+        body.light .skill,
+        body.light .project,
+        body.light .contact input,
+        body.light .contact textarea {
+            background: white;
+            color: #111827;
+        }
+
+        body.light .hero-text p,
+        body.light .about p,
+        body.light .project p {
+            color: #4b5563;
+        }
+
+        body.light footer {
+            background: #e5e7eb;
+        }
+    
+
+        /* ===== EXTRA PREMIUM ANIMATIONS ===== */
+
+        /* Animated background grid + floating particles */
+        body {
+            overflow-x: hidden;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+            opacity: .18;
+            background-image:
+                linear-gradient(rgba(0,229,255,.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,229,255,.08) 1px, transparent 1px);
+            background-size: 55px 55px;
+            animation: gridMove 18s linear infinite;
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+        }
+
+        @keyframes gridMove {
+            from { background-position: 0 0, 0 0; }
+            to { background-position: 55px 55px, 55px 55px; }
+        }
+
+        /* Navbar entrance + animated logo */
+        nav {
+            animation: navDrop .9s cubic-bezier(.2,.8,.2,1) both;
+        }
+
+        @keyframes navDrop {
+            from { opacity: 0; transform: translateY(-100%); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            animation: logoPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%,100% { text-shadow: 0 0 0 rgba(0,229,255,0); }
+            50% { text-shadow: 0 0 16px rgba(0,229,255,.55); }
+        }
+
+        nav li {
+            animation: navItemIn .7s both;
+        }
+        nav li:nth-child(1) { animation-delay: .15s; }
+        nav li:nth-child(2) { animation-delay: .25s; }
+        nav li:nth-child(3) { animation-delay: .35s; }
+        nav li:nth-child(4) { animation-delay: .45s; }
+        nav li:nth-child(5) { animation-delay: .55s; }
+
+        @keyframes navItemIn {
+            from { opacity: 0; transform: translateY(-12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav a {
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            border-radius: 10px;
+            background: #00e5ff;
+            box-shadow: 0 0 10px #00e5ff;
+            transform: translateX(-50%);
+            transition: width .3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Theme button */
+        #themeBtn {
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        #themeBtn:hover {
+            transform: rotate(20deg) scale(1.12);
+            box-shadow: 0 0 22px rgba(0,229,255,.55);
+        }
+
+        /* Hero heading shimmer */
+        .hero-text h1 span {
+            background: linear-gradient(90deg, #00e5ff, #fff, #7c3cff, #00e5ff);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 4s linear infinite;
+        }
+
+        @keyframes textShimmer {
+            to { background-position: 250% center; }
+        }
+
+        .hero-text h3::after {
+            content: " ✦";
+            display: inline-block;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%,100% { opacity: .35; transform: scale(.8) rotate(0); }
+            50% { opacity: 1; transform: scale(1.2) rotate(20deg); }
+        }
+
+        /* Profile image rotation/glow */
+        .profile-box {
+            isolation: isolate;
+        }
+
+        .profile-box img {
+            transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .7s ease;
+        }
+
+        .profile-box:hover img {
+            transform: scale(1.06) rotate(2deg);
+            filter: saturate(1.15) brightness(1.08);
+        }
+
+        .profile-box::before {
+            border-width: 2px;
+        }
+
+        /* Skills / projects shine sweep */
+        .skill, .project {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill::before, .project::before {
+            content: "";
+            position: absolute;
+            top: -80%;
+            left: -35%;
+            width: 35%;
+            height: 260%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,.13),
+                transparent
+            );
+            transform: rotate(25deg);
+            transition: left .8s ease;
+            pointer-events: none;
+        }
+
+        .skill:hover::before, .project:hover::before {
+            left: 125%;
+        }
+
+        .skill::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            border: 1px solid transparent;
+            background: linear-gradient(120deg, transparent, rgba(0,229,255,.5), transparent) border-box;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) padding-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity .35s ease;
+            pointer-events: none;
+        }
+
+        .skill:hover::after {
+            opacity: 1;
+        }
+
+        .skill-icon {
+            transition: transform .35s ease, filter .35s ease;
+        }
+
+        .skill:hover .skill-icon {
+            transform: translateY(-10px) scale(1.18) rotate(-8deg);
+            filter: drop-shadow(0 0 12px rgba(0,229,255,.7));
+        }
+
+        /* Project links */
+        .project a {
+            transition: letter-spacing .3s ease, transform .3s ease;
+        }
+
+        .project a:hover {
+            letter-spacing: 1px;
+            transform: translateX(6px);
+        }
+
+        /* Inputs animate on focus */
+        .contact input,
+        .contact textarea {
+            transition: border-color .3s ease, box-shadow .3s ease,
+                        transform .3s ease, background .3s ease;
+        }
+
+        .contact input:focus,
+        .contact textarea:focus {
+            border-color: #00e5ff;
+            box-shadow: 0 0 0 3px rgba(0,229,255,.08), 0 0 22px rgba(0,229,255,.16);
+            transform: translateY(-2px);
+        }
+
+        .contact button {
+            position: relative;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .contact button::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            background: rgba(255,255,255,.3);
+            transform: translate(-50%,-50%);
+            transition: width .55s ease, height .55s ease;
+        }
+
+        .contact button:hover::before {
+            width: 500px;
+            height: 500px;
+        }
+
+        .contact button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,229,255,.28);
+        }
+
+        /* Footer glow */
+        footer p {
+            animation: footerGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes footerGlow {
+            0%,100% { opacity: .65; }
+            50% { opacity: 1; text-shadow: 0 0 12px rgba(0,229,255,.3); }
+        }
+
+        /* Scroll progress bar */
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00e5ff, #7c3cff);
+            box-shadow: 0 0 12px rgba(0,229,255,.8);
+            z-index: 2000;
+            pointer-events: none;
+        }
+
+        /* Cursor glow */
+        #cursorGlow {
+            position: fixed;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(0,229,255,.11), transparent 65%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity .25s ease;
+        }
+
+        /* Better reveal */
+        .reveal {
+            will-change: transform, opacity;
+        }
+
+        @media (max-width: 700px) {
+            #cursorGlow {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body::after,
+            .logo,
+            .hero-text h1 span,
+            .hero-text h3::after,
+            footer p {
+                animation: none !important;
+            }
+        }
+
+        /* ===== PREMIUM ANIMATIONS ===== */
+        html { scroll-behavior: smooth; }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(0,229,255,.10), transparent 28%),
+                radial-gradient(circle at 85% 70%, rgba(124,60,255,.10), transparent 30%);
+            z-index: -1;
+        }
+
+        .hero-text {
+            animation: heroTextIn 1s cubic-bezier(.2,.8,.2,1) both;
+        }
+
+        .hero-text h3 { animation: fadeUp .8s .1s both; }
+        .hero-text h1 { animation: fadeUp .8s .2s both; }
+        .hero-text p  { animation: fadeUp .8s .35s both; }
+        .buttons      { animation: fadeUp .8s .5s both; }
+
+        .profile-box {
+            position: relative;
+            box-shadow: 0 0 0 rgba(0,229,255,0);
+            animation: float 4s ease-in-out infinite, profileGlow 2.8s ease-in-out infinite;
+        }
+
+        .profile-box::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,229,255,.35);
+            animation: pulseRing 2.5s ease-out infinite;
+        }
+
+        .profile-box::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 8%;
+            right: 8%;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow: 0 0 20px #00e5ff;
+            animation: orbitDot 4s linear infinite;
+        }
+
+        .skill, .project {
+            transform: translateY(0);
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+        }
+
+        .skill:hover, .project:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 18px 45px rgba(0,0,0,.25);
+        }
+
+        .skill-icon {
+            display: inline-block;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        .skill:nth-child(2) .skill-icon { animation-delay: .3s; }
+        .skill:nth-child(3) .skill-icon { animation-delay: .6s; }
+        .skill:nth-child(4) .skill-icon { animation-delay: .9s; }
+
+        .project h3 {
+            transition: letter-spacing .3s ease;
+        }
+
+        .project:hover h3 { letter-spacing: 1px; }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 80%;
+            height: 100%;
+            transform: skewX(-20deg);
+            background: rgba(255,255,255,.22);
+            transition: left .55s ease;
+        }
+
+        .btn:hover::after { left: 130%; }
+
+        .section-title {
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        #topBtn {
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        #topBtn:hover {
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 0 25px rgba(0,229,255,.5);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(35px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes heroTextIn {
+            from { opacity: 0; transform: translateX(-45px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes profileGlow {
+            0%,100% { box-shadow: 0 0 20px rgba(0,229,255,.20); }
+            50% { box-shadow: 0 0 55px rgba(0,229,255,.45), 0 0 90px rgba(124,60,255,.20); }
+        }
+
+        @keyframes pulseRing {
+            0% { transform: scale(.95); opacity: .8; }
+            100% { transform: scale(1.18); opacity: 0; }
+        }
+
+        @keyframes orbitDot {
+            0% { transform: rotate(0deg) translateX(0); }
+            50% { transform: rotate(180deg) translateX(10px); }
+            100% { transform: rotate(360deg) translateX(0); }
+        }
+
+        @keyframes iconFloat {
+            0%,100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-7px) rotate(4deg); }
+        }
+
+        @keyframes titleGlow {
+            0%,100% { text-shadow: 0 0 0 rgba(0,229,255,0); }
+            50% { text-shadow: 0 0 18px rgba(0,229,255,.22); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+    
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    
+/* ===== SPACE GAME ===== */
+.space-game-modal{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);padding:15px}
+.space-game-modal.show{display:flex;animation:gameFade .25s ease}
+.space-game{width:min(960px,100%);height:min(720px,95vh);position:relative;border:1px solid rgba(0,229,255,.35);border-radius:22px;overflow:hidden;background:#02040c;box-shadow:0 0 60px rgba(0,229,255,.18)}
+.space-game canvas{width:100%;height:100%;display:block;background:#02040c}
+.game-ui{position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:center;pointer-events:none;font-weight:700;text-shadow:0 0 10px #00e5ff}
+.game-stats{display:flex;gap:18px;flex-wrap:wrap}
+.game-close{pointer-events:auto;border:0;background:rgba(255,255,255,.1);color:#fff;width:40px;height:40px;border-radius:50%;font-size:24px;cursor:pointer}
+.game-help{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:13px;color:#b8c0d0;background:rgba(0,0,0,.45);padding:7px 12px;border-radius:20px;white-space:nowrap}
+.game-start{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,4,12,.55)}
+.game-start.hidden{display:none}
+.game-panel{text-align:center;padding:30px;border-radius:20px;background:rgba(10,15,30,.88);border:1px solid rgba(0,229,255,.3)}
+.game-panel h2{font-size:34px;margin-bottom:10px;color:#00e5ff}
+.game-panel p{color:#b8c0d0;margin-bottom:18px}
+.game-panel button{border:0;border-radius:25px;padding:12px 25px;background:#00e5ff;color:#061018;font-weight:800;cursor:pointer}
+@keyframes gameFade{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){
+ .space-game{height:82vh;border-radius:14px}
+ .game-help{font-size:11px}
+ .game-stats{gap:9px;font-size:12px}
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">
+            VishalChaudhary<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="themeBtn">🌙</button>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h3>Hello, I'm</h3>
+
+            <h1>
+               Vishal<span>Chaudhary</span>
+            </h1>
+
+            <p>
+                Frontend Developer passionate about creating
+                modern, responsive and interactive websites
+                using HTML, CSS and JavaScript.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="profile-box">
+            <img src="profile.jpg" alt="Vishal Profile">
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about">
+
+            <p>
+                I am a passionate Frontend Developer who enjoys
+                building clean, responsive and interactive web
+                experiences. I work with HTML, CSS and JavaScript
+                and continuously improve my development skills
+                by creating real-world projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <div class="skill-icon">🌐</div>
+                <h3>HTML</h3>
+                <p>Semantic & structured websites</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🎨</div>
+                <h3>CSS</h3>
+                <p>Responsive & modern designs</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">⚡</div>
+                <h3>JavaScript</h3>
+                <p>Interactive web applications</p>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🐙</div>
+                <h3>GitHub</h3>
+                <p>Version control & projects</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <h3>🧮 Calculator</h3>
+
+                <p>
+                    A premium responsive calculator with keyboard support,
+                    animations, percentages and functional mathematical operations.
+                </p>
+
+                <a href="#" onclick="openCalculator(); return false;">🧮 Open Calculator →</a>
+            </div>
+
+
+            <div class="project">
+                <h3>🚀 Space Shooter</h3>
+
+                <p>
+                    An interactive browser game developed
+                    using HTML, CSS and JavaScript.
+                </p>
+
+                <a href="#" onclick="openSpaceGame(); return false;">🚀 Play Space Game →</a>
+            </div>
+
+
+            <div class="project">
+                <h3>💼 Portfolio</h3>
+
+                <p>
+                    A modern interactive portfolio website
+                    showcasing skills, projects and contact
+                    information.
+                </p>
+
+                <a href="#">View Project →</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===== PREMIUM CALCULATOR ===== -->
+    <div id="calculatorModal" class="calculator-modal" aria-hidden="true">
+        <div class="calculator">
+            <button class="calc-close" onclick="closeCalculator()" aria-label="Close calculator">×</button>
+            <div class="calc-title">🧮 Smart Calculator</div>
+            <div id="calcDisplay" class="calc-display">0</div>
+            <div class="calc-grid">
+                <button onclick="calcClear()" class="calc-action">AC</button>
+                <button onclick="calcDelete()" class="calc-action">⌫</button>
+                <button onclick="calcInput('%')" class="calc-action">%</button>
+                <button onclick="calcInput('/')" class="calc-op">÷</button>
+
+                <button onclick="calcInput('7')">7</button>
+                <button onclick="calcInput('8')">8</button>
+                <button onclick="calcInput('9')">9</button>
+                <button onclick="calcInput('*')" class="calc-op">×</button>
+
+                <button onclick="calcInput('4')">4</button>
+                <button onclick="calcInput('5')">5</button>
+                <button onclick="calcInput('6')">6</button>
+                <button onclick="calcInput('-')" class="calc-op">−</button>
+
+                <button onclick="calcInput('1')">1</button>
+                <button onclick="calcInput('2')">2</button>
+                <button onclick="calcInput('3')">3</button>
+                <button onclick="calcInput('+')" class="calc-op">+</button>
+
+                <button onclick="calcInput('0')" class="zero">0</button>
+                <button onclick="calcInput('.')">.</button>
+                <button onclick="calcCalculate()" class="calc-equal">=</button>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ===== INTEGRATED SPACE SHOOTER ===== -->
+<div id="spaceGameModal" class="space-game-modal" aria-hidden="true">
+  <div class="space-game">
+    <canvas id="spaceCanvas"></canvas>
+    <div class="game-ui">
+      <div class="game-stats">
+        <span>🚀 Score: <b id="gameScore">0</b></span>
+        <span>❤️ Lives: <b id="gameLives">3</b></span>
+        <span>⭐ Level: <b id="gameLevel">1</b></span>
+      </div>
+      <button class="game-close" onclick="closeSpaceGame()" aria-label="Close game">×</button>
+    </div>
+    <div id="gameStart" class="game-start">
+      <div class="game-panel">
+        <h2>🚀 Space Shooter</h2>
+        <p>Destroy the asteroids and survive as long as you can!</p>
+        <button onclick="startSpaceGame()">START GAME</button>
+      </div>
+    </div>
+    <div class="game-help">Move: ← → / A D &nbsp; • &nbsp; Shoot: Space &nbsp; • &nbsp; Restart: R</div>
+  </div>
+</div>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <div class="contact">
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Send Message 🚀
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 VishalChaudhary | All Rights Reserved
+        </p>
+
+    </footer>
+
+
+    <!-- TOP BUTTON -->
+
+    <button id="topBtn">↑</button>
+
+
+    <script>
+
+        // DARK / LIGHT MODE
+
+        const themeBtn = document.getElementById("themeBtn");
+
+        themeBtn.addEventListener("click", function() {
+
+            document.body.classList.toggle("light");
+
+            if(document.body.classList.contains("light")) {
+                themeBtn.innerHTML = "☀️";
+            } else {
+                themeBtn.innerHTML = "🌙";
+            }
+
+        });
+
+
+        // CONTACT FORM
+
+        document.getElementById("contactForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Thank you! Your message has been received 🚀");
+
+            this.reset();
+
+        });
+
+
+        // TOP BUTTON
+
+        const topBtn = document.getElementById("topBtn");
+
+        window.addEventListener("scroll", function() {
+
+            if(window.scrollY > 300) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+
+        });
+
+        topBtn.addEventListener("click", function() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    
+        // SCROLL REVEAL
+        const revealItems = document.querySelectorAll(
+            "#about, #skills, #projects, #contact, .skill, .project"
+        );
+
+        revealItems.forEach(el => el.classList.add("reveal"));
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealItems.forEach(el => revealObserver.observe(el));
+
+
+        // SCROLL PROGRESS
+        const scrollProgress = document.getElementById("scrollProgress");
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            scrollProgress.style.width = progress + "%";
+        }, { passive: true });
+
+        // CURSOR GLOW
+        const cursorGlow = document.getElementById("cursorGlow");
+
+        if (window.matchMedia("(pointer: fine)").matches) {
+            window.addEventListener("mousemove", (e) => {
+                cursorGlow.style.left = e.clientX + "px";
+                cursorGlow.style.top = e.clientY + "px";
+                cursorGlow.style.opacity = "1";
+            });
+
+            document.addEventListener("mouseleave", () => {
+                cursorGlow.style.opacity = "0";
+            });
+        }
+
+        // 3D TILT EFFECT FOR CARDS
+        document.querySelectorAll(".skill, .project").forEach(card => {
+            card.addEventListener("mousemove", e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const rotateX = ((y / rect.height) - 0.5) * -8;
+                const rotateY = ((x / rect.width) - 0.5) * 8;
+
+                card.style.transform =
+                    `translateY(-12px) scale(1.02) perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "";
+            });
+        });
+
+        // BUTTON RIPPLE
+        document.querySelectorAll(".btn, .contact button").forEach(button => {
+            button.addEventListener("click", function(e) {
+                const ripple = document.createElement("span");
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.cssText = `
+                    position:absolute;
+                    width:${size}px;
+                    height:${size}px;
+                    left:${e.clientX - rect.left - size / 2}px;
+                    top:${e.clientY - rect.top - size / 2}px;
+                    border-radius:50%;
+                    background:rgba(255,255,255,.25);
+                    transform:scale(0);
+                    pointer-events:none;
+                    animation:rippleEffect .65s ease-out;
+                `;
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 700);
+            });
+        });
+
+        // Add ripple animation dynamically
+        const rippleStyle = document.createElement("style");
+        rippleStyle.textContent = `
+            @keyframes rippleEffect {
+                to { transform: scale(1.8); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+
+        // ===== SMART CALCULATOR =====
+        let calcExpression = "";
+        const calcDisplay = document.getElementById("calcDisplay");
+
+        function updateCalcDisplay() {
+            calcDisplay.textContent = calcExpression || "0";
+        }
+
+        function openCalculator() {
+            document.getElementById("calculatorModal").classList.add("show");
+            document.getElementById("calculatorModal").setAttribute("aria-hidden", "false");
+            updateCalcDisplay();
+        }
+
+        function closeCalculator() {
+            document.getElementById("calculatorModal").classList.remove("show");
+            document.getElementById("calculatorModal").setAttribute("aria-hidden", "true");
+        }
+
+        function calcInput(value) {
+            if (value === "%") {
+                if (!calcExpression) return;
+                calcExpression = calcExpression.replace(/(\d+(\.\d+)?)$/, "($1/100)");
+            } else {
+                calcExpression += value;
+            }
+            updateCalcDisplay();
+        }
+
+        function calcClear() {
+            calcExpression = "";
+            updateCalcDisplay();
+        }
+
+        function calcDelete() {
+            calcExpression = calcExpression.slice(0, -1);
+            updateCalcDisplay();
+        }
+
+        function calcCalculate() {
+            if (!calcExpression) return;
+            try {
+                // Allow only calculator-safe characters.
+                if (!/^[0-9+\-*/().%\s]+$/.test(calcExpression)) throw new Error("Invalid");
+                const result = Function('"use strict"; return (' + calcExpression + ')')();
+                if (!Number.isFinite(result)) throw new Error("Invalid");
+                calcExpression = String(Math.round(result * 1e12) / 1e12);
+                updateCalcDisplay();
+            } catch {
+                calcDisplay.textContent = "Error";
+                calcExpression = "";
+            }
+        }
+
+        document.addEventListener("keydown", (event) => {
+            const modal = document.getElementById("calculatorModal");
+            if (!modal.classList.contains("show")) return;
+
+            if (/^[0-9.+\-*/%()]$/.test(event.key)) {
+                calcInput(event.key);
+            } else if (event.key === "Enter" || event.key === "=") {
+                event.preventDefault();
+                calcCalculate();
+            } else if (event.key === "Backspace") {
+                calcDelete();
+            } else if (event.key === "Escape") {
+                closeCalculator();
+            } else if (event.key.toLowerCase() === "c") {
+                calcClear();
+            }
+        });
+
+        document.getElementById("calculatorModal").addEventListener("click", (event) => {
+            if (event.target.id === "calculatorModal") closeCalculator();
+        });
+
+    </script>
+
+
+</body>
+</html>
